@@ -1,0 +1,255 @@
+/* ================================
+   🌿 Design System
+================================ */
+:root {
+  /* 🎨 Paleta de Cores */
+  --color-primary: #4CAF50;
+  --color-secondary: #FFC107;
+  --color-accent: #FF5722;
+  --color-neutral-light: #F5F5F5;
+  --color-neutral-dark: #212121;
+  --color-info: #2196F3;
+  --color-success: #8BC34A;
+  --color-danger: #F44336;
+
+  /* 🅰️ Tipografia */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.5rem;
+  --font-xl: 2rem;
+
+  /* 📏 Espaçamento Modular */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+/* ================================
+   🔧 Reset e Base
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: var(--font-md);
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================================
+   🧱 Layout Principal com Grid
+================================ */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* ================================
+   🧭 Navegação Responsiva
+================================ */
+header {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--space-2);
+}
+
+nav ul {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Submenu Dropdown */
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background-color: var(--color-secondary);
+  padding: var(--space-2);
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+/* Menu Hambúrguer (Mobile) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: var(--font-xl);
+  color: white;
+}
+
+/* ================================
+   📦 Cards de Projetos
+================================ */
+.card {
+  background-color: white;
+  border: 1px solid var(--color-neutral-dark);
+  border-radius: 8px;
+  padding: var(--space-3);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: var(--space-3);
+}
+
+/* ================================
+   🔘 Botões
+================================ */
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--font-md);
+}
+
+button:hover {
+  background-color: var(--color-success);
+}
+
+button:focus {
+  outline: 2px solid var(--color-info);
+}
+
+button:disabled {
+  background-color: var(--color-neutral-dark);
+  cursor: not-allowed;
+}
+
+/* ================================
+   📝 Formulários
+================================ */
+form {
+  background-color: white;
+  padding: var(--space-4);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+fieldset {
+  border: none;
+  margin-bottom: var(--space-3);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: var(--space-2);
+  margin-bottom: var(--space-2);
+  border: 1px solid var(--color-neutral-dark);
+  border-radius: 4px;
+}
+
+/* ================================
+   ⚠️ Feedback Visual
+================================ */
+.alert {
+  padding: var(--space-2);
+  border-radius: 4px;
+  margin-bottom: var(--space-2);
+}
+
+.alert-success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.alert-danger {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+/* ================================
+   🏷 Badges e Tags
+================================ */
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  border-radius: 12px;
+  background-color: var(--color-accent);
+  color: white;
+  font-size: var(--font-xs);
+  margin-right: var(--space-1);
+}
+
+/* ================================
+   📱 Breakpoints Responsivos
+================================ */
+@media (max-width: 1200px) {
+  body {
+    font-size: var(--font-md);
+  }
+}
+
+@media (max-width: 992px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: var(--font-xs);
+  }
+}
