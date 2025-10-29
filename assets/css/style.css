@@ -28,6 +28,15 @@
   --space-6: 64px;
 }
 
+img {
+  width: 300px;          /* Define a largura da imagem */
+  height: auto;          /* Mantém a proporção original */
+  border-radius: 10px;   /* Arredonda os cantos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+  display: block;        /* Remove espaço extra abaixo da imagem */
+  margin: 20px auto;     /* Centraliza a imagem na página */
+}
+
 /* ================================
    🔧 Reset e Base
 ================================ */
